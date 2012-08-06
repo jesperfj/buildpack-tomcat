@@ -14,6 +14,7 @@ echo "       Buildpack dir = $BUILDPACK_DIR"
 FILES=$(ls $BUILD_DIR)
 
 cp -R $BUILDPACK_DIR/tomcat $BUILD_DIR
+cp $BUILDPACK_DIR/Procfile $BUILD_DIR/Procfile
 
 rm -rf $BUILD_DIR/tomcat/webapps
 
