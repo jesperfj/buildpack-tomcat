@@ -16,6 +16,19 @@ if [ ! -z "$DATABASE_URL" ] ; then
 
 	CATALINA_OPTS="$CATALINA_OPTS -Djdbc.url=$JDBC_URL -Djdbc.user=$JDBC_USER -Djdbc.password=$JDBC_PASSWORD"
 fi
+
+if [ -z "$DATABASE_JNDI_NAME" ] ; then
+
+	DATABASE_JNDI_NAME="jdbc/default"
+	echo "Using JNDI name $DATABASE_JNDI_NAME for database defined at DATABASE_URL. Set config var DATABASE_JNDI_NAME to change this."
+else
+	echo "Using JNDI name $DATABASE_JNDI_NAME for database defined at DATABASE_URL."
+fi
+
+CATALINA_OPTS="$CATALINA_OPTS -Djdbc.jndiname=$DATABASE_JNDI_NAME"
+
+echo ""
+
 export CATALINA_OPTS
 
 $BIN_DIR/catalina.sh run

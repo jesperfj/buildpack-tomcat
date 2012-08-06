@@ -1,5 +1,5 @@
 <Context>
-  <Resource name="jdbc/default" auth="Container"
+  <Resource name="${jdbc.jndiname}" auth="Container"
             type="javax.sql.DataSource" driverClassName="org.postgresql.Driver"
             url="${jdbc.url}"
             username="${jdbc.user}" password="${jdbc.password}" maxActive="20" maxIdle="10"
