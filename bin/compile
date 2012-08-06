@@ -8,4 +8,15 @@ echo "       Build dir = $BUILD_DIR"
 echo "       Cache dir = $2"
 echo "       Buildpack dir = $BUILDPACK_DIR"
 
+# The web app is located in $BUILD_DIR. We need to move it into a ROOT sub dir.
+# We build a list of all files before we put other stuff in this dir.
+
+FILES=$(ls $BUILD_DIR)
+
 cp -R $BUILDPACK_DIR/tomcat $BUILD_DIR
+
+rm -rf $BUILD_DIR/tomcat/webapps
+
+mkdir -p $BUILD_DIR/tomcat/webapps/ROOT
+
+mv $FILES $BUILD_DIR/tomcat/webapps/ROOT
