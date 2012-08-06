@@ -1,0 +1,11 @@
+#!/bin/sh
+
+BUILDPACK_DIR=$(cd $(dirname $0)/.. ; pwd)
+BUILD_DIR=$1
+
+echo "-----> Assembling Tomcat App."
+echo "       Build dir = $BUILD_DIR"
+echo "       Cache dir = $2"
+echo "       Buildpack dir = $BUILDPACK_DIR"
+
+cp -R $BUILDPACK_DIR/tomcat $BUILD_DIR
