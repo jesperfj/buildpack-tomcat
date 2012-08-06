@@ -136,3 +136,13 @@ $ heroku logs -a stormy-reef-2997
 
 The 2nd line indicates that connection parameters were properly detected and parsed. The second to last line indicates that the servlet was able to hit the database during initialization.
 
+# Customize JNDI name
+
+You can customize what JNDI name to use by setting the `DATABASE_JNDI_NAME` config var on the app:
+
+```
+$ heroku config:add DATABASE_JNDI_NAME="jdbc/mydb" -a stormy-reef-2997
+```
+
+This allows you to use the JNDI name defined in your web application code without modifying it.
+
