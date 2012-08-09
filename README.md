@@ -107,34 +107,42 @@ and we can check the logs to verify that the Servlet initialized the database co
 
 ```
 $ heroku logs -a stormy-reef-2997
-...
-2012-08-06T16:28:48+00:00 heroku[web.1]: Starting process with command `tomcat/bin/run_tomcat.sh`
-2012-08-06T16:28:48+00:00 app[web.1]: Detected DATABASE_URL. Configuring Java System properties: jdbc.url=jdbc:postgresql://ec2-23-21-91-29.compute-1.amazonaws.com:5432/dabgnq65c6eoc7, jdbc.user=vujhadtflgvkjx, jdbc.password=********
-2012-08-06T16:28:49+00:00 app[web.1]: Aug 6, 2012 4:28:49 PM org.apache.catalina.core.AprLifecycleListener init
-2012-08-06T16:28:49+00:00 app[web.1]: INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /usr/lib/jvm/java-6-openjdk/jre/lib/amd64/server:/usr/lib/jvm/java-6-openjdk/jre/lib/amd64:/usr/lib/jvm/java-6-openjdk/jre/../lib/amd64:/usr/java/packages/lib/amd64:/usr/lib/jni:/lib:/usr/lib
-2012-08-06T16:28:50+00:00 app[web.1]: Aug 6, 2012 4:28:50 PM org.apache.coyote.AbstractProtocol init
-2012-08-06T16:28:50+00:00 app[web.1]: INFO: Initializing ProtocolHandler ["http-bio-52213"]
-2012-08-06T16:28:50+00:00 app[web.1]: Aug 6, 2012 4:28:50 PM org.apache.catalina.startup.Catalina load
-2012-08-06T16:28:50+00:00 app[web.1]: INFO: Initialization processed in 1564 ms
-2012-08-06T16:28:50+00:00 app[web.1]: Aug 6, 2012 4:28:50 PM org.apache.catalina.core.StandardService startInternal
-2012-08-06T16:28:50+00:00 app[web.1]: INFO: Starting service Catalina
-2012-08-06T16:28:50+00:00 app[web.1]: Aug 6, 2012 4:28:50 PM org.apache.catalina.core.StandardEngine startInternal
-2012-08-06T16:28:50+00:00 app[web.1]: INFO: Starting Servlet Engine: Apache Tomcat/7.0.29
-2012-08-06T16:28:50+00:00 app[web.1]: Aug 6, 2012 4:28:50 PM org.apache.catalina.startup.HostConfig deployDescriptor
-2012-08-06T16:28:50+00:00 app[web.1]: INFO: Deploying configuration descriptor /app/tomcat/conf/Catalina/localhost/ROOT.xml
-2012-08-06T16:28:51+00:00 heroku[web.1]: State changed from starting to up
-2012-08-06T16:28:51+00:00 app[web.1]: Aug 6, 2012 4:28:51 PM org.apache.coyote.AbstractProtocol start
-2012-08-06T16:28:51+00:00 app[web.1]: INFO: Starting ProtocolHandler ["http-bio-52213"]
-2012-08-06T16:28:51+00:00 app[web.1]: Aug 6, 2012 4:28:51 PM org.apache.catalina.startup.Catalina start
-2012-08-06T16:28:51+00:00 app[web.1]: INFO: Server startup in 1027 ms
-2012-08-06T16:29:45+00:00 heroku[router]: GET stormy-reef-2997.herokuapp.com/ dyno=web.1 queue=0 wait=0ms service=700ms status=200 bytes=52
-2012-08-06T16:29:45+00:00 heroku[router]: GET stormy-reef-2997.herokuapp.com/favicon.ico dyno=web.1 queue=0 wait=0ms service=6ms status=404 bytes=988
-2012-08-06T16:29:50+00:00 app[web.1]: Aug 6, 2012 4:29:50 PM org.apache.catalina.core.ApplicationContext log
-2012-08-06T16:29:50+00:00 app[web.1]: INFO: SQL Connection Test: true
-2012-08-06T16:29:50+00:00 heroku[router]: GET stormy-reef-2997.herokuapp.com/hello dyno=web.1 queue=0 wait=0ms service=127ms status=200 bytes=12
+2012-08-09T16:06:30+00:00 heroku[web.1]: Starting process with command `tomcat/bin/run_tomcat.sh`
+2012-08-09T16:06:32+00:00 app[web.1]: Aug 9, 2012 4:06:31 PM org.apache.catalina.core.AprLifecycleListener init
+2012-08-09T16:06:32+00:00 app[web.1]: INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /usr/lib/jvm/java-6-openjdk/jre/lib/amd64/server:/usr/lib/jvm/java-6-openjdk/jre/lib/amd64:/usr/lib/jvm/java-6-openjdk/jre/../lib/amd64:/usr/java/packages/lib/amd64:/usr/lib/jni:/lib:/usr/lib
+2012-08-09T16:06:35+00:00 app[web.1]: Aug 9, 2012 4:06:35 PM org.apache.coyote.AbstractProtocol init
+2012-08-09T16:06:35+00:00 app[web.1]: INFO: Initializing ProtocolHandler ["http-bio-6284"]
+2012-08-09T16:06:35+00:00 app[web.1]: Aug 9, 2012 4:06:35 PM org.apache.catalina.startup.Catalina load
+2012-08-09T16:06:35+00:00 app[web.1]: INFO: Initialization processed in 4106 ms
+2012-08-09T16:06:35+00:00 app[web.1]: Aug 9, 2012 4:06:35 PM org.apache.catalina.core.StandardService startInternal
+2012-08-09T16:06:35+00:00 app[web.1]: INFO: Starting service Catalina
+2012-08-09T16:06:35+00:00 app[web.1]: Aug 9, 2012 4:06:35 PM org.apache.catalina.core.StandardEngine startInternal
+2012-08-09T16:06:35+00:00 app[web.1]: INFO: Starting Servlet Engine: Apache Tomcat/7.0.29
+2012-08-09T16:06:35+00:00 app[web.1]: Aug 9, 2012 4:06:35 PM org.apache.catalina.startup.HostConfig deployDescriptor
+2012-08-09T16:06:35+00:00 app[web.1]: INFO: Deploying configuration descriptor /app/tomcat/conf/Catalina/localhost/ROOT.xml
+2012-08-09T16:06:35+00:00 app[web.1]: Aug 9, 2012 4:06:35 PM com.github.jesperfj.tomcat.EnvBasedResourceConfig lifecycleEvent
+2012-08-09T16:06:35+00:00 app[web.1]: INFO: Configured JNDI data source from environment: $DATABASE_URL => jdbc/default: url=jdbc:postgresql://ec2-23-21-91-29.compute-1.amazonaws.com:5432/dabgnq65c6eoc7, username=vujhadtflgvkjx, config={maxActive=20, maxIdle=10, name=jdbc/default, maxWait=-1}
+2012-08-09T16:06:35+00:00 app[web.1]: Aug 9, 2012 4:06:35 PM org.apache.catalina.util.LifecycleBase start
+2012-08-09T16:06:35+00:00 app[web.1]: INFO: The start() method was called on component [org.apache.catalina.deploy.NamingResources@5a199939] after start() had already been called. The second call will be ignored.
+2012-08-09T16:06:36+00:00 heroku[web.1]: State changed from starting to up
+2012-08-09T16:06:36+00:00 app[web.1]: Aug 9, 2012 4:06:36 PM org.apache.coyote.AbstractProtocol start
+2012-08-09T16:06:36+00:00 app[web.1]: INFO: Starting ProtocolHandler ["http-bio-6284"]
+2012-08-09T16:06:37+00:00 app[web.1]: Aug 9, 2012 4:06:37 PM org.apache.catalina.startup.Catalina start
+2012-08-09T16:06:37+00:00 app[web.1]: INFO: Server startup in 1706 ms
+2012-08-09T16:06:37+00:00 app[web.1]: Aug 9, 2012 4:06:37 PM org.apache.catalina.core.ApplicationContext log
+2012-08-09T16:06:37+00:00 app[web.1]: INFO: SQL Connection Test: true
+2012-08-09T16:06:37+00:00 heroku[router]: GET stormy-reef-2997.herokuapp.com/hello dyno=web.1 queue=0 wait=0ms service=187ms status=200 bytes=12
 ```
 
-The 2nd line indicates that connection parameters were properly detected and parsed. The second to last line indicates that the servlet was able to hit the database during initialization.
+The line:
+
+	2012-08-09T16:06:35+00:00 app[web.1]: INFO: Configured JNDI data source from environment: $DATABASE_URL => jdbc/default: url=jdbc:postgresql://ec2-23-21-91-29.compute-1.amazonaws.com:5432/dabgnq65c6eoc7, username=vujhadtflgvkjx, config={maxActive=20, maxIdle=10, name=jdbc/default, maxWait=-1}
+
+indicates that the database was properly detected and configured. The line
+
+	2012-08-09T16:06:37+00:00 app[web.1]: INFO: SQL Connection Test: true
+
+is printed by the test web app and indicates that the servlet was able to hit the database during initialization.
 
 # Customize Data Source Settings
 
@@ -145,4 +153,9 @@ You can customize the following data source settings:
 * Max Idle: 10
 * Max Wait: -1 (disabled)
 
-To change their default value, set new values of one or more of these paramters using the config variable approach.
+To change their default value, set the `DATABASE_JNDI` config var containing the new values in a JSON hash. For example:
+
+```
+DATABASE_JNDI={"name": "jdbc/yourdb", "maxActive": "10"}
+```
+

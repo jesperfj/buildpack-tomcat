@@ -127,7 +127,6 @@ public class EnvBasedResourceConfig implements LifecycleListener {
                         catch (JSONException e) {}
                     }
                 }
-                log.info("Creating data source with url="+url+", username="+username+", password="+password);
                 ContextResource c = new ContextResource();
 
                 c.setAuth("Container");
