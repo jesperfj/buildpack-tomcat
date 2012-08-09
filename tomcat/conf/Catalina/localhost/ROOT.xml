@@ -1,8 +1,4 @@
 <Context>
-  <Resource name="${jdbc.jndiname}" auth="Container"
-            type="javax.sql.DataSource" driverClassName="org.postgresql.Driver"
-            url="${jdbc.url}"
-            username="${jdbc.user}" password="${jdbc.password}" maxActive="20" maxIdle="10"
-            maxWait="-1"/>
+  <Listener className="com.github.jesperfj.tomcat.EnvBasedResourceConfig" />
 </Context>
 

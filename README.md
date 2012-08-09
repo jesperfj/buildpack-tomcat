@@ -1,6 +1,6 @@
 # Tomcat Build Pack for WAR Deployments to Heroku
 
-This buildpack is a demonstration of how you can use the buildpack architecture to model the classic separation in the Java world of web application and web application server. If you are interested in how this works, you should start by reading about buildpacks.
+This buildpack is a demonstration of how you can use the buildpack architecture to model the classic separation in the Java world of web application and web application server. If you are interested in how this works, you should start by reading about [buildpacks](https://devcenter.heroku.com/articles/buildpacks).
 
 This buildpack will do the following:
 
@@ -8,7 +8,7 @@ This buildpack will do the following:
 1. It sets up a standard Tomcat distribution in the `tomcat` folder
 1. It copies the original application files to `tomcat/webapps/ROOT`. Again in exploded format.
 1. It copies in a default Procfile that starts tomcat using the custom `run_tomcat.sh` script. This script sets Java system properties for HTTP port and for JDBC connection configuration if the `DATABASE_URL` environment variable is present during runtime.
-1. It configures a JNDI data source on `jdbc/default` that maps to the database pointed to by `DATABASE_URL`
+1. It configures a JNDI data source on `jdbc/default` that maps to the database pointed to by `DATABASE_URL`. The data source name and parameters can be customized with environment variables.
 1. It configures Tomcat to not listen on any other ports than $PORT
 1. It configures Tomcat to only log to standard out.
 
@@ -136,13 +136,13 @@ $ heroku logs -a stormy-reef-2997
 
 The 2nd line indicates that connection parameters were properly detected and parsed. The second to last line indicates that the servlet was able to hit the database during initialization.
 
-# Customize JNDI name
+# Customize Data Source Settings
 
-You can customize what JNDI name to use by setting the `DATABASE_JNDI_NAME` config var on the app:
+You can customize the following data source settings:
 
-```
-$ heroku config:add DATABASE_JNDI_NAME="jdbc/mydb" -a stormy-reef-2997
-```
+* JNDI name. Default is jdbc/default. You can set it to jdbc/whatever.
+* Max Active: 20
+* Max Idle: 10
+* Max Wait: -1 (disabled)
 
-This allows you to use the JNDI name defined in your web application code without modifying it.
-
+To change their default value, set new values of one or more of these paramters using the config variable approach.
