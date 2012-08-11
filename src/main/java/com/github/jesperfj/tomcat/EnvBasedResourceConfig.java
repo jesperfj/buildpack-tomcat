@@ -70,7 +70,7 @@ public class EnvBasedResourceConfig implements LifecycleListener {
 
             String dbstr = System.getenv("DATABASE_URL");
             if(dbstr==null) {
-                log.info("DATABASE_URL not set in environment. No data souce will be configured");
+                log.info("DATABASE_URL not set in environment. No data source will be configured");
                 return;
             }
 
