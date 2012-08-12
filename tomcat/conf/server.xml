@@ -125,6 +125,7 @@
             unpackWARs="true" autoDeploy="true">
 
         <Valve className="com.github.jesperfj.tomcat.HttpsRedirectValve" />
+        <Valve className="com.github.jesperfj.tomcat.BasicAuthValve" />
 
         <!-- SingleSignOn valve, share authentication between web applications
              Documentation at: /docs/config/valve.html -->
