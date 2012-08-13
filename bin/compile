@@ -4,8 +4,9 @@ BUILDPACK_DIR=$(cd $(dirname $0)/.. ; pwd)
 BUILD_DIR=$1
 
 echo "-----> Assembling Tomcat App."
-echo "       Build dir = $BUILD_DIR"
-echo "       Cache dir = $2"
+echo "       Working dir   = $(pwd)"
+echo "       Build dir     = $BUILD_DIR"
+echo "       Cache dir     = $2"
 echo "       Buildpack dir = $BUILDPACK_DIR"
 
 # The web app is located in $BUILD_DIR. We need to move it into a ROOT sub dir.
