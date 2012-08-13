@@ -12,13 +12,15 @@ echo "       Buildpack dir = $BUILDPACK_DIR"
 # The web app is located in $BUILD_DIR. We need to move it into a ROOT sub dir.
 # We build a list of all files before we put other stuff in this dir.
 
-FILES=$(ls $BUILD_DIR)
+cd $BUILD_DIR
 
-cp -R $BUILDPACK_DIR/tomcat $BUILD_DIR
-cp $BUILDPACK_DIR/Procfile $BUILD_DIR/Procfile
+FILES=$(ls)
 
-rm -rf $BUILD_DIR/tomcat/webapps
+cp -R $BUILDPACK_DIR/tomcat .
+cp $BUILDPACK_DIR/Procfile Procfile
 
-mkdir -p $BUILD_DIR/tomcat/webapps/ROOT
+rm -rf tomcat/webapps
 
-mv $FILES $BUILD_DIR/tomcat/webapps/ROOT
+mkdir -p tomcat/webapps/ROOT
+
+mv $FILES tomcat/webapps/ROOT
