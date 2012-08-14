@@ -18,6 +18,7 @@ FILES=$(ls)
 
 cp -R $BUILDPACK_DIR/tomcat .
 cp $BUILDPACK_DIR/Procfile Procfile
+cp -R $BUILDPACK_DIR/.asgard .asgard 
 
 rm -rf tomcat/webapps
 
